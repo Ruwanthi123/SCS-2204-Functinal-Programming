@@ -12,9 +12,9 @@ object caesarCipher{
 
   def decrytion(c:Char,key:Int,s:String):Char={
     if(c>= 'a' && c <= 'z'){                    //check for lowercase letters
-      s((s.indexOf(c.toLower)-key)%s.size)
+      s((s.indexOf(c.toLower)+53-key)%s.size)
     }else{                                      //check for uppercase letters
-      s((s.indexOf(c.toUpper)-key)%s.size)
+      s((s.indexOf(c.toUpper)+53-key)%s.size)
     }
   }
 
@@ -25,7 +25,7 @@ object caesarCipher{
 
   def main(args: Array[String]){
 
-    val alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ#$%^&"
+    val alphabet = "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
     print("Enter the text : ")
     val text = readLine()
